@@ -31,6 +31,42 @@ function NotificationsScreen({ navigation }) {
   );
 }
 
+function ConfigScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Configuration Screen</Text>
+      <Button
+        onPress={() => navigation.navigate('Notifications')}
+        title="Go to notifications"
+      />
+      <Text>{'\n'}</Text>
+      
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate('Login')}
+      />
+    </View>
+  );
+}
+
+function RegScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Register Screen</Text>
+      <Button
+        onPress={() => navigation.navigate('Notifications')}
+        title="Go to notifications"
+      />
+      <Text>{'\n'}</Text>
+      
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate('Login')}
+      />
+    </View>
+  );
+}
+
 const Drawer = createDrawerNavigator();
 
 function MainDrawer() {
@@ -39,6 +75,8 @@ function MainDrawer() {
     <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        <Drawer.Screen name="Configuration" component={ConfigScreen} />
+        <Drawer.Screen name="Register" component={RegScreen} />
     </Drawer.Navigator>
   );
 }
