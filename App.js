@@ -10,12 +10,12 @@ function HomeScreen({ navigation }) {
       <Text>Home Screen</Text>
       <Button
         onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
+        title="Ir para as Notificações"
       />
       <Text>{'\n'}</Text>
       
       <Button
-        title="Go to Login"
+        title="Ir para o Login"
         onPress={() => navigation.navigate('Login')}
       />
     </View>
@@ -25,8 +25,8 @@ function HomeScreen({ navigation }) {
 function NotificationsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Notifications Screen</Text>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+      <Text>Tela de Notificação</Text>
+      <Button onPress={() => navigation.goBack()} title="Voltar para o Home" />
     </View>
   );
 }
@@ -37,35 +37,18 @@ function ConfigScreen({ navigation }) {
       <Text>Configuration Screen</Text>
       <Button
         onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
+        title="Ir para as Notificações"
       />
       <Text>{'\n'}</Text>
       
       <Button
-        title="Go to Login"
+        title="Ir para o Login"
         onPress={() => navigation.navigate('Login')}
       />
     </View>
   );
 }
 
-function RegScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Register Screen</Text>
-      <Button
-        onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
-      />
-      <Text>{'\n'}</Text>
-      
-      <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('Login')}
-      />
-    </View>
-  );
-}
 
 const Drawer = createDrawerNavigator();
 
@@ -76,7 +59,6 @@ function MainDrawer() {
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
         <Drawer.Screen name="Configuration" component={ConfigScreen} />
-        <Drawer.Screen name="Register" component={RegScreen} />
     </Drawer.Navigator>
   );
 }
@@ -98,12 +80,25 @@ function Settings() {
   );
 }
 
+function Registro() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Cadastro de Usuário</Text>
+    </View>
+  );
+}
+
 function Login({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Login Screen</Text>
+      <Text>Tela Login</Text>
       <Button
-        title="Go to MainDrawer"
+        title="Cadastro de Usuário"
+        onPress={() => navigation.navigate('Registro')}
+      />
+      <br/>
+      <Button
+        title="Home"
         onPress={() => navigation.navigate('MainDrawer')}
       />
 
@@ -126,6 +121,7 @@ function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Registro" component={Registro} />
       </Stack.Navigator>
     </NavigationContainer>
   );
