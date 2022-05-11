@@ -34,7 +34,7 @@ function NotificationsScreen({ navigation }) {
 function ConfigScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Configuration Screen</Text>
+      <Text>Tela de Configuração </Text>
       <Button
         onPress={() => navigation.navigate('Notifications')}
         title="Ir para as Notificações"
@@ -58,7 +58,7 @@ function MainDrawer() {
     <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-        <Drawer.Screen name="Configuration" component={ConfigScreen} />
+        <Drawer.Screen name="Configuração" component={ConfigScreen} />
     </Drawer.Navigator>
   );
 }
